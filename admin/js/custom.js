@@ -170,7 +170,7 @@ $("#add_voter").submit(function(e){
     var voter_dob = $("#voter_dob").val()
     var voter_address = $("#voter_address").val()
     var voter_sorigin = $("#voter_sorigin").val()
-    var voter_phone  = $("#voter_phone").val()
+    var voter_phone  = "+234"+ $("#voter_phone").val()
     $.ajax({
         url: "php/voterreg.php",
         type: "POST",
