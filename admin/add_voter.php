@@ -1,7 +1,12 @@
+<?php
+require_once 'php/ca4nafa3ga.php';
+session_start();
+logged();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Shoppy an Admin Panel Category Flat Bootstrap Responsive Website Template | Blank :: w3layouts</title>
+<title>Election Platform | Add Voter</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -28,7 +33,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="header-main">
 					<div class="header-left">
 							<div class="logo-name">
-									 <a href="index.html"> <h1>INEC Board</h1> 
+									 <a href="index.php"> <h1>INEC Board</h1> 
 									<!--<img id="logo" src="" alt="Logo"/>--> 
 								  </a> 								
 							</div>
@@ -78,31 +83,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--inner block start here-->
 <div class="inner-block">
     <div class="blank">
-    	<h2>State Elecitons 2019</h2>
-    	<a href="add_election.html" class="btn btn-primary">Add Election</a>
+    	<h2>Add Voter</h2>
     	<div class="blankpage-main">
-    		<h2>2019 Lagos State Election</h2>
-    		<p><strong>Election Type:</strong> State</p>
-    		<p><strong>Year:</strong> 2019</p>
-    		<p><strong>Candidates:</strong></p>
-    		<p>Ambode Babatunde - APC</p>
-    		<p>Semilore Hayeeen - SEM</p>
-    		<p>Fashola Babatunde - PDP</p>
-    		<p>Henry Inok - JEG</p>
-    		<p>Enetomhe Daniel - APC</p>
-    		<p>Ikike Abasi - PDP</p>
-    	</div>
-
-    	<div class="blankpage-main">
-    		<h2>2019 Edo State Election</h2>
-    		<p><strong>Election Type:</strong> State</p>
-    		<p><strong>Year:</strong> 2019</p>
-    		<p><strong>Candidates:</strong></p>
-    		<p>Ameh Patrick - APC</p>
-    		<p>Sodiq Anjola - SEM</p>
-    		<p>Smith Daniel - PDP</p>
-    		<p>Austine Desmond - JEG</p>
-    		<p>Enam Samson - APC</p>
+    		<form id="add_voter">
+    			<div id="error_handler" class="hide" style=" color: #fff; padding: 5px; text-align: center;">
+					<p>Message</p>
+				</div>
+			  <div class="form-group">
+			    <label for="">Voter's firstame:</label>
+			    <input type="text" class="form-control" id="voter_firstname" name="voter_firstname">
+        </div>
+        <div class="form-group">
+			    <label for="">Voter's lastame:</label>
+			    <input type="text" class="form-control" id="voter_lastname" name="voter_lastname">
+        </div>
+        <div class="form-group">
+			    <label for="">Voter's other name:</label>
+			    <input type="text" class="form-control" id="voter_othername" name="voter_othername">
+			  </div>
+			  <div class="form-group">
+			    <label for="">Voters Date Of Birth:</label>
+			    <input type="date" class="form-control" id="voter_dob" name="voter_dob">
+			  </div>
+			  <div class="form-group">
+			    <label for="">Voters Address:</label>
+			    <input type="text" class="form-control" id="voter_address" name="voter_address">
+			  </div>
+			  <div class="form-group">
+          <label for="">Voters State of Origin:</label>
+          <input type="text" class="form-control" id="voter_sorigin" name="voter_sorigin">
+        </div>
+        <div class="form-group">
+          <label for="">Voters Phone Number:</label>
+          <input type="text" class="form-control" id="voter_phone" name="voter_phone">
+			  </div>
+			  <button type="submit" id="add_voterx" class="btn btn-primary">Submit</button>
+			</form>
     	</div>
     </div>
 </div>
@@ -121,18 +137,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			  </a> </div>		  
 		    <div class="menu">
 		      <ul id="menu" >
-		        <li id="menu-home" ><a href="index.html"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
+		        <li id="menu-home" ><a href="index.php"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
 		        <li><a href="#"><i class="fa fa-cogs"></i><span>Elections</span><span class="fa fa-angle-right" style="float: right"></span></a>
 		          <ul>
-                    <li><a href="set_election.html">Create an Election</a></li>
-                    <li><a href="add_election.html">Add Candidates</a></li>
-		            <li><a href="presidential.html">Presidential</a></li>
-		            <li><a href="state.html">State</a></li>	
-		            <li><a href="senate.html">Senate</a></li>
-		            <li><a href="local.html">Local Government</a></li>	            
+                    <li><a href="set_election.php">Create an Election</a></li>
+                    <li><a href="add_election.php">Add Candidates</a></li>
+		            <li><a href="presidential.php">Presidential</a></li>
+		            <li><a href="state.php">State</a></li>	
+		            <li><a href="senate.php">Senate</a></li>
+		            <li><a href="local.php">Local Government</a></li>	            
 		          </ul>
 		        </li>
-		         <li><a href="#"><i class="fa fa-cog"></i><span>Logout</span></li>
+		         <li><a href="#"><i class="fa fa-cog"></i><span>Logout</span></a></li>
 		      </ul>
 		    </div>
 	 </div>
@@ -163,10 +179,9 @@ $(".sidebar-icon").click(function() {
 		<script src="js/scripts.js"></script>
 		<!--//scrolling js-->
 <script src="js/bootstrap.js"> </script>
+<script src="js/custom.js"> </script>
 <!-- mother grid end here-->
 </body>
 </html>
 
 
-                      
-						

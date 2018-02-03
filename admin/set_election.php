@@ -1,3 +1,8 @@
+<?php
+require_once 'php/ca4nafa3ga.php';
+session_start();
+logged();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -28,7 +33,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="header-main">
 					<div class="header-left">
 							<div class="logo-name">
-									 <a href="index.html"> <h1>INEC Board</h1> 
+									 <a href="index.php"> <h1>INEC Board</h1> 
 									<!--<img id="logo" src="" alt="Logo"/>--> 
 								  </a> 								
 							</div>
@@ -132,15 +137,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			  </a> </div>		  
 		    <div class="menu">
 		      <ul id="menu" >
-		        <li id="menu-home" ><a href="index.html"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
+		        <li id="menu-home" ><a href="index.php"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
 		        <li><a href="#"><i class="fa fa-cogs"></i><span>Elections</span><span class="fa fa-angle-right" style="float: right"></span></a>
 		          <ul>
-                    <li><a href="set_election.html">Create an Election</a></li>
-                    <li><a href="add_election.html">Add Candidates</a></li>
-		            <li><a href="presidential.html">Presidential</a></li>
-		            <li><a href="state.html">State</a></li>	
-		            <li><a href="senate.html">Senate</a></li>
-		            <li><a href="local.html">Local Government</a></li>	            
+                    <li><a href="set_election.php">Create an Election</a></li>
+                    <li><a href="add_election.php">Add Candidates</a></li>
+		            <li><a href="presidential.php">Presidential</a></li>
+		            <li><a href="state.php">State</a></li>	
+		            <li><a href="senate.php">Senate</a></li>
+		            <li><a href="local.php">Local Government</a></li>	            
 		          </ul>
 		        </li>
 		         <li><a href="#"><i class="fa fa-cog"></i><span>Logout</span></li>

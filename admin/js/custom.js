@@ -161,3 +161,34 @@ $("#inec_login").submit(function(e){
         }
     })
 })
+
+$("#add_voter").submit(function(e){
+    e.preventDefault()
+    var voter_firstname = $("#voter_firstname").val()
+    var voter_lastname = $("#voter_lastname").val()
+    var voter_othername = $("#voter_othername").val()
+    var voter_dob = $("#voter_dob").val()
+    var voter_address = $("#voter_address").val()
+    var voter_sorigin = $("#voter_sorigin").val()
+    var voter_phone  = $("#voter_phone").val()
+    $.ajax({
+        url: "php/voterreg.php",
+        type: "POST",
+        data: {voter_firstname:voter_firstname, voter_lastname:voter_lastname, voter_othername:voter_othername,voter_dob:voter_dob, voter_address:voter_address, voter_phone:voter_phone, added:"added"},
+        success: function(res){
+            if (res=="error") {
+                $("#error_handler").removeClass('hide')
+                $("#error_handler").css({"background-color":"red"})
+                $("#error_handler").html("Something went wrong, Voter Not Added")
+            }else {
+                $("#error_handler").removeClass('hide')
+                $("#error_handler").css("background-color", "green")
+                $("#error_handler").html("Voter Added Successfully!")
+            }
+        },
+        error: function(){
+            $("#error_handler").removeClass('hide')
+            $("#error_handler").html("No Internet Connection")
+        }
+    })
+})

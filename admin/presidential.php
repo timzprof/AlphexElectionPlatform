@@ -1,7 +1,12 @@
+<?php
+require_once 'php/ca4nafa3ga.php';
+session_start();
+logged();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Election Platform : Add Candidates</title>
+<title>Shoppy an Admin Panel Category Flat Bootstrap Responsive Website Template | Blank :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -28,7 +33,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="header-main">
 					<div class="header-left">
 							<div class="logo-name">
-									 <a href="index.html"> <h1>INEC Board</h1> 
+									 <a href="index.php"> <h1>INEC Board</h1> 
 									<!--<img id="logo" src="" alt="Logo"/>--> 
 								  </a> 								
 							</div>
@@ -78,57 +83,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--inner block start here-->
 <div class="inner-block">
     <div class="blank">
-    	<h2>Add Election</h2>
+    	<h2>Presidential Election 2019</h2>
+    	<a href="add_election.php" class="btn btn-primary">Add Candidates</a>
     	<div class="blankpage-main">
-    		<form id="add_candidate">
-    			<div id="error_handler" class="hide" style=" color: #fff; padding: 5px; text-align: center;">
-					<p>Message</p>
-				</div>
-			  <div class="form-group">
-			    <label for="exampleInputEmail1">Election Type:</label>
-			    <select class="form-control" name="candidate_election" id="candidate_election" onchange="cSelect(this.value)">
-			    	<option value="empty" disabled="" selected="">Select an election</option>
-			    	<option value="Presidential">Presidential</option>
-			    	<option value="State">State</option>
-			    	<option value="Senate">Senate</option>
-			    	<option value="Local Government">Local Government</option>
-			    </select>
-			  </div>
-			  <div class="form-group hide" id="stateselected">
-			    <label for="">Select State:</label>
-			    <select class="form-control" name="candidate_election_state" id="candidate_election_state">
-			    	<option value="empty" disabled="" selected="">Select an election</option>
-			    	<option value="Lagos">Lagos</option>
-			    	<option value="Edo">Edo</option>
-			    	<option value="Delta">Delta</option>
-			    	<option value="Kogi">Kogi</option>
-			    	<option value="Cross-river">Cross-river</option>
-			    	<option value="Rivers">Delta</option>
-			    	<option value="Ondo">Ondo</option>
-			    	<option value="Oyo">Oyo</option>
-			    </select>
-			  </div>
-			  <div class="form-group">
-			    <label for="">Candidate Name:</label>
-			    <input type="text" class="form-control" id="name" name="candidate_name">
-			  </div>
-			  <div class="form-group">
-			    <label for="">Date Of Birth:</label>
-			    <input type="date" class="form-control" id="date" name="candidate_dob">
-			  </div>
-			  <div class="form-group">
-			    <label for="">Candidate Party:</label>
-			    <input type="text" class="form-control" id="party" name="candidate_party">
-			  </div>
-			  <div class="form-group">
-			    <label for="">Candidate Tenure:</label>
-			    <select class="form-control" name="candidate_tenure" id="candidate_tenure">
-			    	<option value="1st Tenure">1st Tenure</option>
-			    	<option value="2nd Tenure">2nd Tenure</option>
-			    </select>
-			  </div>
-			  <button type="submit" id="add_candidatex" class="btn btn-primary">Submit</button>
-			</form>
+    		<h2>2019 Presidential Election</h2>
+    		<p><strong>Election Type:</strong> Presidential</p>
+    		<p><strong>Year:</strong> 2019</p>
+    		<p><strong>Candidates:</strong></p>
+    		<p>Muhammadu Buhari - APC</p>
+    		<p>Goodluck Johnathan - PDP</p>
+    		<p>Awadike Felix - JEG</p>
+    		<p>Daniel Lamarr - SEM</p>
+    		<p>Okesola Kofo - APC</p>
+    		<p>Ogunola Michael - PDP</p>
     	</div>
     </div>
 </div>
@@ -147,15 +114,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			  </a> </div>		  
 		    <div class="menu">
 		      <ul id="menu" >
-		        <li id="menu-home" ><a href="index.html"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
+		        <li id="menu-home" ><a href="index.php"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
 		        <li><a href="#"><i class="fa fa-cogs"></i><span>Elections</span><span class="fa fa-angle-right" style="float: right"></span></a>
 		          <ul>
-                    <li><a href="set_election.html">Create an Election</a></li>
-                    <li><a href="add_election.html">Add Candidates</a></li>
-		            <li><a href="presidential.html">Presidential</a></li>
-		            <li><a href="state.html">State</a></li>	
-		            <li><a href="senate.html">Senate</a></li>
-		            <li><a href="local.html">Local Government</a></li>	            
+                    <li><a href="set_election.php">Create an Election</a></li>
+                    <li><a href="add_election.php">Add Candidates</a></li>
+		            <li><a href="presidential.php">Presidential</a></li>
+		            <li><a href="state.php">State</a></li>	
+		            <li><a href="senate.php">Senate</a></li>
+		            <li><a href="local.php">Local Government</a></li>	            
 		          </ul>
 		        </li>
 		         <li><a href="#"><i class="fa fa-cog"></i><span>Logout</span></li>
@@ -189,9 +156,10 @@ $(".sidebar-icon").click(function() {
 		<script src="js/scripts.js"></script>
 		<!--//scrolling js-->
 <script src="js/bootstrap.js"> </script>
-<script src="js/custom.js"> </script>
 <!-- mother grid end here-->
 </body>
 </html>
 
 
+                      
+						

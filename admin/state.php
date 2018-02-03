@@ -1,31 +1,12 @@
 <?php
 require_once 'php/ca4nafa3ga.php';
-
 session_start();
-
 logged();
-
-if (isset($_SESSION['private_voter'])) {
-	$pv = $_SESSION['private_voter'];
-	$pvi = $pv['voters_reg_id'];
-	$sql = "SELECT * FROM vxxz_voters WHERE voters_reg_id = '$pvi'";
-	$query = $conn->query($sql);
-	$px = $query->fetch_assoc();
-	$pxv = $px['voters_reg_id'];
-	$pxf = $px['voters_firstname'];
-	$pxs = $px['voters_surname'];
-	$pxm = $px['voters_other_name'];
-	$pxd = $px['voters_dob'];
-	$pxa = $px['voters_address'];
-	$pxso = $px['voters_sorigin'];
-}else{
-	$pv = "empty";
-}
 ?>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Election Platform : Profile</title>
+<title>Shoppy an Admin Panel Category Flat Bootstrap Responsive Website Template | Blank :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -52,7 +33,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="header-main">
 					<div class="header-left">
 							<div class="logo-name">
-									 <a href="index.html"> <h1>Shoppy</h1> 
+									 <a href="index.php"> <h1>INEC Board</h1> 
 									<!--<img id="logo" src="" alt="Logo"/>--> 
 								  </a> 								
 							</div>
@@ -67,8 +48,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<div class="profile_img">	
 												<span class="prfil-img"><img src="images/p1.png" alt=""> </span> 
 												<div class="user-name">
-													<p>Malorum</p>
-													<span>Administrator</span>
+													<p>INEC Admin</p>
+													<span>Admin001</span>
 												</div>
 												<i class="fa fa-angle-down lnr"></i>
 												<i class="fa fa-angle-up lnr"></i>
@@ -102,26 +83,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--inner block start here-->
 <div class="inner-block">
     <div class="blank">
-    	<h2>Profile Page</h2>
-    	<div class="blankpage-main" style="height: 350px;">
-    			<div class="col-md-4">
-    				<img src="images/2.png" alt="" width="150" height="150">
-    			</div>
-    			<div class="col-md-6">
-    				<p><strong>Name</strong>: <?=  $pxf ." ". $pxs ." ". $pxm; ?></p>
-    				<p><strong>Reg No</strong>:<?= $pvi; ?></p>
-    				<p><strong>Date Of Birth</strong>:<?= $pxd;?></p>
-    				<p><strong>Address</strong>:<?= $pxa;?></p>
-    				<p><strong>State of Origin</strong>:<?= $pxso;?></p>
-    			</div>
+    	<h2>State Elecitons 2019</h2>
+    	<a href="add_election.php" class="btn btn-primary">Add Election</a>
+    	<div class="blankpage-main">
+    		<h2>2019 Lagos State Election</h2>
+    		<p><strong>Election Type:</strong> State</p>
+    		<p><strong>Year:</strong> 2019</p>
+    		<p><strong>Candidates:</strong></p>
+    		<p>Ambode Babatunde - APC</p>
+    		<p>Semilore Hayeeen - SEM</p>
+    		<p>Fashola Babatunde - PDP</p>
+    		<p>Henry Inok - JEG</p>
+    		<p>Enetomhe Daniel - APC</p>
+    		<p>Ikike Abasi - PDP</p>
+    	</div>
+
+    	<div class="blankpage-main">
+    		<h2>2019 Edo State Election</h2>
+    		<p><strong>Election Type:</strong> State</p>
+    		<p><strong>Year:</strong> 2019</p>
+    		<p><strong>Candidates:</strong></p>
+    		<p>Ameh Patrick - APC</p>
+    		<p>Sodiq Anjola - SEM</p>
+    		<p>Smith Daniel - PDP</p>
+    		<p>Austine Desmond - JEG</p>
+    		<p>Enam Samson - APC</p>
     	</div>
     </div>
 </div>
 <!--inner block end here-->
 <!--copy rights start here-->
 <div class="copyrights">
-	 <p>© 2019 INEC Nigeria. All Rights Reserved | Developed by  <a href="" target="_blank">Alphex</a> </p>
-</div>	
+	 <p>© 2019 INEC Board. All Rights Reserved | Developed by  <a href="" target="_blank">Alphex</a> </p>
+</div>
 <!--COPY rights end here-->
 </div>
 </div>
@@ -133,12 +127,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		    <div class="menu">
 		      <ul id="menu" >
 		        <li id="menu-home" ><a href="index.php"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
-		        <li><a href="profile.php"><i class="fa fa-cogs"></i><span>Profile</span></a>
+		        <li><a href="#"><i class="fa fa-cogs"></i><span>Elections</span><span class="fa fa-angle-right" style="float: right"></span></a>
+		          <ul>
+                    <li><a href="set_election.php">Create an Election</a></li>
+                    <li><a href="add_election.php">Add Candidates</a></li>
+		            <li><a href="presidential.php">Presidential</a></li>
+		            <li><a href="state.php">State</a></li>	
+		            <li><a href="senate.php">Senate</a></li>
+		            <li><a href="local.php">Local Government</a></li>	            
+		          </ul>
 		        </li>
-		        <li id="menu-comunicacao" ><a href="#"><i class="fa fa-book nav_icon"></i><span>History</span></a>
-		        </li>
-		         <li><a href="#"><i class="fa fa-cog"></i><span>Logout</span></a>
-		         </li>
+		         <li><a href="#"><i class="fa fa-cog"></i><span>Logout</span></li>
 		      </ul>
 		    </div>
 	 </div>
