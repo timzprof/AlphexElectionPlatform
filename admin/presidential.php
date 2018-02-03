@@ -125,7 +125,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		            <li><a href="local.php">Local Government</a></li>	            
 		          </ul>
 		        </li>
-		         <li><a href="#"><i class="fa fa-cog"></i><span>Logout</span></li>
+		         <li><a href="logout.php"><i class="fa fa-cog"></i><span>Logout</span></li>
 		      </ul>
 		    </div>
 	 </div>

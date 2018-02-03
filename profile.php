@@ -137,7 +137,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		        </li>
 		        <li id="menu-comunicacao" ><a href="#"><i class="fa fa-book nav_icon"></i><span>History</span></a>
 		        </li>
-		         <li><a href="#"><i class="fa fa-cog"></i><span>Logout</span></a>
+		         <li><a href="logout.php"><i class="fa fa-cog"></i><span>Logout</span></a>
 		         </li>
 		      </ul>
 		    </div>
