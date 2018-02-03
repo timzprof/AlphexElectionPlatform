@@ -13,11 +13,11 @@ if(isset($_POST['added'])){
 	$vxadd = $_POST['voter_address'];
   $vxso = $_POST['voter_sorigin'];
   $vxph = $_POST['voter_phone'];
-  $success = "Your reg no:". $cid . "and password:". $vxlname;
+  $success = 
 
 	$sql = "INSERT INTO vxxz_voters (voters_reg_id, voters_firstname,voters_surname,voters_other_name, voters_dob, voters_address, voters_sorigin, voters_phone) VALUES ('$cid', '$vxfname','$vxlname','$vxoname', '$vxdob', '$vxadd', '$vxso', '$vxph')";
 	if ($query = $conn->query($sql)) {
-		echo "success";
+		echo "Your reg no:". $cid . "and password:". $vxlname;
 	}else{
 		echo "error";
 	}
