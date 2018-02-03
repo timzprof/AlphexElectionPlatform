@@ -49,6 +49,20 @@ function voteSMS(recipient){
     })
 }
 
+function voteSms(recipient,message){
+    $.ajax({
+        url:'php/sms.php',
+        method: 'POST',
+        data: {recipient:recipient, message:message, voteSms:"voteSms"},
+        success: function(){
+            alert("Voter Added!")
+        },
+        error: function(){
+            alert("Network Error!!")
+        }
+    })
+}
+
 $("#add_candidate").submit(function(e){
     e.preventDefault()
     var candidate_name = $("#name").val()
@@ -184,6 +198,7 @@ $("#add_voter").submit(function(e){
                 $("#error_handler").removeClass('hide')
                 $("#error_handler").css("background-color", "green")
                 $("#error_handler").html("Voter Added Successfully!")
+                voteSms(voter_phone, res);
             }
         },
         error: function(){
