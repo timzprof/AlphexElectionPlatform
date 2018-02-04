@@ -17,7 +17,7 @@ if(isset($_POST['added'])){
 
 	$sql = "INSERT INTO vxxz_voters (voters_reg_id, voters_firstname,voters_surname,voters_other_name, voters_dob, voters_address, voters_sorigin, voters_phone) VALUES ('$cid', '$vxfname','$vxlname','$vxoname', '$vxdob', '$vxadd', '$vxso', '$vxph')";
 	if ($query = $conn->query($sql)) {
-		echo "Your reg no:". $cid . "and password:". $vxlname;
+		echo "You have been registered to use the Online Election Platform .To Log in: Your registration number=". $cid . "and password=". $vxlname;
 	}else{
 		echo "error";
 	}
